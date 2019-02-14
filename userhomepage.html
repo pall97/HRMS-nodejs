@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show User Details</title>
+       <meta charset="utf-8">
+       <meta name="description" content="This is Employee Details updation form">	
+	   <link href="css/userhomepage.css" rel="stylesheet" type="text/css">
+	   <script src="http://code.jquery.com/jquery-3.3.1.js"
+				integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+				crossorigin="anonymous">
+		</script>
+	   <script src="js/userhomepage.js"></script>
+	</head>
+<body onload="FillDetails()">
+</div>
+<div class="header">
+	<a href="homepage.html"><img src="images/cyg_logo.jpg" alt=""></a>
+	<div class="wel_text">Welcome To Cyber Group India</br>
+		<div class="punch_line">Technology-Connected-Device-Outsourcing</div>
+	</div>
+</div>
+<div id="nav_bar">
+	<div class="nav_items">
+		<ul>	
+			<a href="homepage.html"><button type="button" class="nav_btn">Add Skills</button></a>
+			<div class="dropdown">
+				<div class="dropdown-content">
+					<li><a href="my profile.html">My Profile</a></li>
+					<li><a href="my Account.html">My Account</a></li>
+					<li><a href="index.html">Log Out</a></li>
+				</div>
+			</div>
+		</ul>
+	</div>
+</div>
+<div class="bigbox">
+		<div class="inner_box">
+			<img src="images/cyg_logo.jpg" alt="">
+			<div class="box_text">Skills :</div>
+			<input type="text" class="input_box" id="skills" placeholder="Add Skills" value=""></br>
+			<button type="button" class="update_btn" onclick="UpdateDetails()"> Update Skills </button>
+		</div>
+</div>
+<div id="footer">
+Copyright All rights reserved © 2017
+</div>
+</body></html>

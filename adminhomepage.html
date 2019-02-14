@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Homepage</title>
+       <meta charset="utf-8">
+	   <meta name="viewport" content = "width = device-width, initial-scale = 1.0">
+       <meta name="description" content="This is Cyber Group Login page">	
+	   <link href="css/adminhomepage.css" rel="stylesheet" type="text/css">
+	   <script src="http://code.jquery.com/jquery-3.3.1.js"
+				integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+				crossorigin="anonymous">
+		</script>
+	   <script src="js/adminhomepage.js"></script>
+	</head>
+<body onload="defaultload()">
+<div id="nav_bar">
+	<div class="nav_items">
+		<ul>	
+			<li><button type="button" class="nav_btn" id="userbutton" onclick="user()"> Add User </button></li>
+			<li><button type="button" class="nav_btn" id="skillbutton" onclick="skill()"> Add Skill </button></li>
+			<li><button type="button" class="nav_btn" id="projectbutton" onclick="project()"> Add Project </button></li>
+		</ul>
+	</div>
+</div>
+<div class="bigbox" id="default">
+	<div class="timeline_text">This is Your Timeline
+		<table id="mytable">
+			<thead>
+				<tr>
+					<th>Project Name</th>
+					<th>Project Description</th>
+					<th>Tech Stack</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="bigbox" id="user">
+	<div class="UserBox">This is user page
+		<div class="box_text">UserName : </div>
+		<input type="text" class="input_box" id="username" placeholder="UserName, Email">
+		<div class="box_text">Password : </div>
+		<input type="password" class="input_box" id="password" placeholder="Enter Password">
+		<button type="button" class="login_btn" onclick="adduser()"> Add User </button></br>
+	</div>
+</div>
+<div class="bigbox" id="skill">
+	<div class="SkillBox">This is Skill page
+		<div class="box_text">SkillName : </div>
+		<input type="text" class="input_box" id="skillname" placeholder="Enter Skill Name">
+		<div class="box_text">Skill Description : </div>
+		<input type="text" class="input_box" id="skilldescription" placeholder="Elaborate A little">
+		<button type="button" class="login_btn" onclick="addskill()"> Add Skill </button></br>
+	</div>
+</div>
+<div class="bigbox" id="project">
+	<div class="ProjectBox">This is Project Page
+		<div class="box_text">Project Name : </div>
+		<input type="text" class="input_box" id="projectname" placeholder="Enter Project Name">
+		<div class="box_text">Project Description : </div>
+		<input type="text" class="input_box" id="projectdescription" placeholder="What it's all about?">
+		<div class="box_text">Tech Stack : </div>
+		<input type="text" class="input_box" id="techstack" placeholder="Enter Skills Required">
+		<div class="box_text">Recommendation : </div>
+		<input type="text" class="input_box" id="recommendation" placeholder="User Recommendations">
+		<button type="button" class="login_btn" onclick="addproject()"> Add Project </button></br>
+	</div>
+</div>
+<div id="footer">
+Copyright All rights reserved © 2017
+</div>
+</body></html>
