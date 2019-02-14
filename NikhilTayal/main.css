@@ -1,0 +1,86 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+.container{
+    margin: 0px auto;
+}
+#home-section{
+    background-image: url(images/background-books-bookshelves-1193603.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 800px;
+}
+.dark-overlay{
+    background: rgba(0,0,0,0.8);
+    min-height: 800px;
+}
+#logo{
+    min-height: 5%;
+    min-width: 5%;
+    margin-top: 2%;
+    margin-left: 50%;
+}
+.card-body{
+    margin-top: 10%;
+    max-width: 50%;
+    min-height: %;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+}
+h2{
+    font-size: 350%;
+    color: white;
+}
+.main{
+    transform: translateY(-20%);
+}
+#adminPic{
+    max-width: 40%;
+    max-height: 30%;
+    transform: translateY(-50%);
+    margin-bottom: 0px;
+}
+input{
+    margin-bottom: 10%;
+}
+input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+}
+h6{
+    display: inline-block;
+    font-size: 25px;
+    color: white;
+    margin-left: 3%;
+}
+
+
+@media only screen and (max-width: 991px){
+    #logo{
+        margin-left: 0px;
+    }
+    .card-body{
+        margin-top: 20%;
+        min-width: 400px;
+        min-height: %;
+        background-color: rgba(0,0,0,0.6);
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    #logo{
+        width: 100%;
+    }
+    .card-body{
+        margin-top: 20%;
+        min-width: 100%;
+        min-height: %;
+        background-color: rgba(0,0,0,0.6);
+        text-align: center;
+    }
+}
+
+
