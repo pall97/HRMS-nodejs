@@ -1,0 +1,30 @@
+// created db
+>  use HRMS 
+
+//entered 4 records in the collection users
+>  db.users.insert({"Name":"Deepak Bansal","Username":"deepak.bansal@cygrp.com",
+   "Password":"Deepak","Usertype":"admin",Skills:["Java","C#","Nodejs","Python"]})
+
+> db.users.insert({"Name":"Pallavi Verma","Username":"pallavi.verma@cygrp.com",
+   "Password":"Pallavi","Usertype":"admin",Skills:["C#","Java","Python"]})
+
+> db.users.insert({"Name":"Ravikant Sharma","Username":"ravikant.sharma@cygrp.com",
+  "Password":"Ravi","Usertype":"user",Skills:["js"]})
+
+> db.users.insert({"Name":"Nikhil","Username":"ravikant.tayal@cygrp.com",
+  "Password":"Nikhil","Usertype":"user",Skills:["js","cpp"]})
+
+//inserted an array in collection skills
+> db.skills.insert({Skillsname:["html","css","js"]})
+
+//inserted record in collection project
+> db.project.insert({"Projectname":"week1",
+   "Projectdesc":"xyz",
+    Techstack:["html","css","js"],
+    Userassigned:["nikhil.tayal@cygrp.com","ravikant.sharma@cygrp.com"]})
+
+> db.users.find().pretty()
+
+> db.skills.find().pretty()
+
+> db.project.find().pretty()
