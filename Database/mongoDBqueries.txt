@@ -14,3 +14,28 @@
    "Projectdesc":"include simple java html,css",
     Techstack:["html","css","js"],
     Userassigned:["deepak.bansal@cygrp.com","ravikant.sharma@cygrp.com"]})
+
+
+7. db.project.aggregate([
+{
+	$unwind: "$Techstack"
+},
+
+{
+ $lookup:
+  {
+    from: "users",
+    localField:"Techstack",
+    foreignField: "Skills",
+    as: "t3"
+  }
+},
+  {
+   $project : 
+    { 
+      _id:0,
+      t3:1
+
+    } 
+  }
+])
