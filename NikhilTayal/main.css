@@ -1,7 +1,15 @@
 body{
     margin:0px;
     padding:0px;
+    overflow-x: hidden;
+/*    overflow-y: hidden;    */
 }
+
+.main{
+    padding-top: 3rem;
+    width: 100%;
+}
+
 .container{
     margin: 0px auto;
 }
@@ -12,8 +20,8 @@ body{
     background-image: url(images/background-books-bookshelves-1193603.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    min-height: 800px;
+/*    width: 100%;*/
+/*    min-height: 800px;*/
 }
 #home-section{
     background-image: url(images/background-books-bookshelves-1193603.jpg);
@@ -27,15 +35,22 @@ body{
     min-height: 800px;
 }
 #logo{
+/*
+    height: 5rem;
+    width: 5rem;
+*/
+    text-align: center;
+/*
     min-height: 5%;
     min-width: 5%;
     margin-top: 2%;
     margin-left: 71%;
+*/
 }
 .card-body{
-    margin-top: 10%;
+    margin-top: 5rem;
     max-width: 50%;
-    min-height: %;
+    max-height: 50rem;
     background-color: rgba(0,0,0,0.6);
     text-align: center;
 }
@@ -46,11 +61,13 @@ h2{
 .main{
     transform: translateY(-20%);
 }
+
 #adminPic{
     max-width: 40%;
     max-height: 30%;
     transform: translateY(-50%);
     margin-bottom: 0px;
+    padding-top: 2rem;
 }
 input{
     margin-bottom: 10%;
@@ -66,7 +83,8 @@ h6{
     margin-left: 3%;
 }
 .navbar-brand img{
-    width: 60%
+    width: 60%;
+    margin: auto;
 }
 .nav-link {
     font-size: 160%;
@@ -75,9 +93,19 @@ h6{
 .navbar{
     background-color: #333;
 }
+
+.offset-md-3{
+    padding-left: 6rem;
+}
+.offset-sm-3{
+    padding-left: 6rem;
+}
+
 a.navbar-brand-1{
     font-size: 40px;
 }
+
+#adminPic
 nav-item{
     margin-right: 200%;
 }
@@ -109,10 +137,13 @@ h4.modal-title{
     margin-left: 5.5rem!important;
 }
 @media only screen and (max-width: 991px){
+    body{
+        overflow-y: hidden; 
+    }
     #logo{
         left: 50%;
-        transform: translateX(-55%);
-        
+        transform: translateX(-15%);
+
     }
     .card-body{
         margin-top: 20%;
@@ -135,8 +166,7 @@ h4.modal-title{
         display: none;
     }
     .container1{
-        margin-left: 7%;
-
+        margin-left: 0;
     }
     #home-section{
         height: 1330px;
@@ -144,6 +174,36 @@ h4.modal-title{
     .dark-overlay{
         height: 1330px;  
     }
+    .ml-5, .mx-5 {
+        margin-left: 0.5rem!important;
+    }
+    .h3, h3 {
+        font-size: 3.75rem;
+    }
+    h4.modal-title {
+        font-size: 300%;
+    }
+    .form-control-lg{
+        font-size: 1.25rem;
+    }
+    .btn-group-lg>.btn, .btn-lg {
+        font-size: 1.50rem;
+    }
+    h4.modal-title {
+        font-size: 421%;
+    }
+    .ml-3, .mx-3 {
+        margin-left: 0.5rem!important;
+    }
+    .ml-4, .mx-4 {
+        margin-left: 0.5rem!important;
+    }
+    .ml-2, .mx-2 {
+        margin-left: 0rem!important;
+    }
+
+
+
 }
 @media only screen and (max-width: 480px){
     #logo{
@@ -160,8 +220,12 @@ h4.modal-title{
 @media only screen and (min-width: 991px) {
     a.navbar-brand-1 {
         display: none;
-        font-size: 20000px;
+        font-size: 200px;
+        margin-top: 30%;
+        left: 50%;
     }
 }
+
+
 
 
