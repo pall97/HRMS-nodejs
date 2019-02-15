@@ -1,16 +1,30 @@
-1. use HRMS
+// created db
+>  use HRMS 
 
-2.  db.users.insert({"Name":"Deepak Bansal","Username":"deepak.bansal@cygrp.com",
+//entered 4 records in the collection users
+>  db.users.insert({"Name":"Deepak Bansal","Username":"deepak.bansal@cygrp.com",
    "Password":"Deepak","Usertype":"admin",Skills:["Java","C#","Nodejs","Python"]})
 
-3. db.users.insert({"Name":"Ravikant Sharma","Username":"ravikant.sharma@cygrp.com",
-  "Password":"Ravi","Usertype":"user",Skills:["Java","C#","js"]})
+> db.users.insert({"Name":"Pallavi Verma","Username":"pallavi.verma@cygrp.com",
+   "Password":"Pallavi","Usertype":"admin",Skills:["C#","Java","Python"]})
 
-4. db.users.find().pretty()
+> db.users.insert({"Name":"Ravikant Sharma","Username":"ravikant.sharma@cygrp.com",
+  "Password":"Ravi","Usertype":"user",Skills:["js"]})
 
-5. db.skills.insert({Skillsname:["html","css","js"]})
+> db.users.insert({"Name":"Nikhil","Username":"ravikant.tayal@cygrp.com",
+  "Password":"Nikhil","Usertype":"user",Skills:["js","cpp"]})
 
-6. db.project.insert({"Projectname":"week1",
-   "Projectdesc":"include simple java html,css",
+//inserted an array in collection skills
+> db.skills.insert({Skillsname:["html","css","js"]})
+
+//inserted record in collection project
+> db.project.insert({"Projectname":"week1",
+   "Projectdesc":"xyz",
     Techstack:["html","css","js"],
-    Userassigned:["deepak.bansal@cygrp.com","ravikant.sharma@cygrp.com"]})
+    Userassigned:["nikhil.tayal@cygrp.com","ravikant.sharma@cygrp.com"]})
+
+> db.users.find().pretty()
+
+> db.skills.find().pretty()
+
+> db.project.find().pretty()
