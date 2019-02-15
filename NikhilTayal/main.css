@@ -1,0 +1,167 @@
+body{
+    margin:0px;
+    padding:0px;
+}
+.container{
+    margin: 0px auto;
+}
+.container1{
+    margin: 0px auto;
+}
+#home-section1{
+    background-image: url(images/background-books-bookshelves-1193603.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 800px;
+}
+#home-section{
+    background-image: url(images/background-books-bookshelves-1193603.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 800px;
+}
+.dark-overlay{
+    background: rgba(0,0,0,0.8);
+    min-height: 800px;
+}
+#logo{
+    min-height: 5%;
+    min-width: 5%;
+    margin-top: 2%;
+    margin-left: 71%;
+}
+.card-body{
+    margin-top: 10%;
+    max-width: 50%;
+    min-height: %;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
+}
+h2{
+    font-size: 350%;
+    color: white;
+}
+.main{
+    transform: translateY(-20%);
+}
+#adminPic{
+    max-width: 40%;
+    max-height: 30%;
+    transform: translateY(-50%);
+    margin-bottom: 0px;
+}
+input{
+    margin-bottom: 10%;
+}
+input[type=checkbox]{
+    width: 20px;
+    height: 20px;
+}
+h6{
+    display: inline-block;
+    font-size: 25px;
+    color: white;
+    margin-left: 3%;
+}
+.navbar-brand img{
+    width: 60%
+}
+.nav-link {
+    font-size: 160%;
+    margin: 6px
+}
+.navbar{
+    background-color: #333;
+}
+a.navbar-brand-1{
+    font-size: 40px;
+}
+nav-item{
+    margin-right: 200%;
+}
+#home-section
+{
+    padding-top: 98px;
+}
+table{
+    font-size: 150%;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal{
+    text-align: center;
+}
+.ml-3, .mx-3 {
+    margin-left: 4rem!important;
+}
+.modal-content{
+    color: white;
+    background-color: rgba(0,0,0,0.8);
+}
+h4.modal-title{
+    font-size: 300%;
+}
+.ml-5, .mx-5 {
+    margin-left: 8rem!important;
+}
+.ml-4, .mx-4 {
+    margin-left: 5.5rem!important;
+}
+@media only screen and (max-width: 991px){
+    #logo{
+        left: 50%;
+        transform: translateX(-55%);
+        
+    }
+    .card-body{
+        margin-top: 20%;
+        min-width: 600px;
+        min-height: %;
+        background-color: rgba(0,0,0,0.6);
+        text-align: center;
+    }
+    button.btn{
+        width: 95%;
+        margin-top: 2%;
+
+    }
+    .modal-dialog{
+        margin: 0px;
+        max-width: 96%;
+        margin-top: 200px;
+    }
+    i.fas,i.fab{
+        display: none;
+    }
+    .container1{
+        margin-left: 7%;
+
+    }
+    #home-section{
+        height: 1330px;
+    }
+    .dark-overlay{
+        height: 1330px;  
+    }
+}
+@media only screen and (max-width: 480px){
+    #logo{
+        width: 100%;
+    }
+    .card-body{
+        margin-top: 20%;    
+        min-width: 100%;
+        min-height: %;
+        background-color: rgba(0,0,0,0.6);
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 991px) {
+    a.navbar-brand-1 {
+        display: none;
+        font-size: 20000px;
+    }
+}
+
+
