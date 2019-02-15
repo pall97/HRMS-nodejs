@@ -23,14 +23,17 @@ req.name='abc';
 next(); 
 });
 //index route for Login GETAPI
+//route for verifyying user and rendering the page according to it's usertype
 app.get('/index', (req, res)=>{
     res.send('Index');
 });
 //route for adminhomepage GETAPI
+//Showing project list to the admin usertype
 app.get('/adminhomepage', (req, res)=>{
     res.send('GET ADMIN DETAILS');
 });
 //route for userhomepage GETAPI
+//Showing userdteails(profile picture, name, skills) to the user usertype
 app.get('/userhomepage', (req, res)=>{
     res.send('GET USER DETAILS');
 });
@@ -42,19 +45,23 @@ route for Adminhomepage DeleteApi
 app.delete('/adminhomepage', (req, res)=>{
 console.log('Delete Projects or admin details');
 )};*/
-//route for Adminhomepage Add Skills
+//route for Adminhomepage Add User
+//Admin can add Users(uid, password, usertype) to the User collection using this route
 app.post('/adminhomepage/adduser', (req, res)=>{
     console.log('Add User');
    });
-   //route for Adminhomepage Add Skills
-app.post('/adminhomepage/addproject', (req, res)=>{
-    console.log('Add Project');
-   });
 //route for Adminhomepage Add Skills
+//Admin can create/add skills to the skill collection using this route
 app.post('/adminhomepage/addskill', (req, res)=>{
     console.log('Add skills');
    });
+//route for Adminhomepage Add Project
+//Admin can create/add Projects to the Project collection using this route
+app.post('/adminhomepage/addproject', (req, res)=>{
+    console.log('Add Project');
+   });
 //route for userhomepage updateskills
+//user can update his skill through this route
 app.post('/userhomepage/addskill', (req, res)=>{
  console.log('Add Userskills');
 });
