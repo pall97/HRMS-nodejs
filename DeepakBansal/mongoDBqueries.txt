@@ -1,0 +1,16 @@
+1. use HRMS
+
+2.  db.users.insert({"Name":"Deepak Bansal","Username":"deepak.bansal@cygrp.com",
+   "Password":"Deepak","Usertype":"admin",Skills:["Java","C#","Nodejs","Python"]})
+
+3. db.users.insert({"Name":"Ravikant Sharma","Username":"ravikant.sharma@cygrp.com",
+  "Password":"Ravi","Usertype":"user",Skills:["Java","C#","js"]})
+
+4. db.users.find().pretty()
+
+5. db.skills.insert({Skillsname:["html","css","js"]})
+
+6. db.project.insert({"Projectname":"week1",
+   "Projectdesc":"include simple java html,css",
+    Techstack:["html","css","js"],
+    Userassigned:["deepak.bansal@cygrp.com","ravikant.sharma@cygrp.com"]})
