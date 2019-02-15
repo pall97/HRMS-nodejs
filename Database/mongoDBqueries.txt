@@ -21,6 +21,34 @@
 > db.project.insert({"Projectname":"week1",
    "Projectdesc":"xyz",
     Techstack:["html","css","js"],
+<<<<<<< HEAD
+    Userassigned:["deepak.bansal@cygrp.com","ravikant.sharma@cygrp.com"]})
+
+
+7. db.project.aggregate([
+{
+	$unwind: "$Techstack"
+},
+
+{
+ $lookup:
+  {
+    from: "users",
+    localField:"Techstack",
+    foreignField: "Skills",
+    as: "t3"
+  }
+},
+  {
+   $project : 
+    { 
+      _id:0,
+      t3:1
+
+    } 
+  }
+])
+=======
     Userassigned:["nikhil.tayal@cygrp.com","ravikant.sharma@cygrp.com"]})
 
 > db.users.find().pretty()
@@ -28,3 +56,4 @@
 > db.skills.find().pretty()
 
 > db.project.find().pretty()
+>>>>>>> 591a572aaa74238b8e47a875dcbafd6f636570df
