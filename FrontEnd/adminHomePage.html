@@ -52,17 +52,20 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="user"><h3>Name:</h3></label>
-                                <input type="text" class="form-control form-control-lg" id="user">
+                                <input type="text" class="form-control form-control-lg" id="useradduser">
                             </div>
                             <div class="form-group">
                                 <label for="pass"><h3>Password:</h3></label>
-                                <input type="password" class="form-control form-control-lg" id="pass">
+                                <input type="password" class="form-control form-control-lg" id="passwordadduser">
+                            </div>
+							<div  class="form-group">
+                                <label for="type"><h3>Usertype:</h3></label>
+                                <input type="text" class="form-control form-control-lg" id="usertypeadduser">
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                            <button type="submit" class="btn btn-primary btn-lg" onclick="adduser()">Create User</button>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -78,15 +81,15 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="user"><h3>Skill Name:</h3></label>
-                                <input type="text" class="form-control form-control-lg" id="user">
+                                <input type="text" class="form-control form-control-lg" id="skillnameaddskill">
                             </div>
                             <div class="form-group">
                                 <label for="user"><h3>Skill Description:</h3></label>
-                                <input type="text" class="form-control form-control-lg" id="user">
+                                <input type="text" class="form-control form-control-lg" id="skilldescaddskill">
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary btn-lg">Add Skill</button>
+                            <button type="submit" class="btn btn-primary btn-lg" onclick="addskill()">Add Skill</button>
                         </div>
 
                     </div>
@@ -104,23 +107,23 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="pname"><h3>Project Name:</h3></label>
-                                <input type="text" class="form-control form-control-lg" id="pname">
+                                <input type="text" class="form-control form-control-lg" id="projectnameaddproject">
                             </div>
                             <div class="form-group">
                                 <label for="user"><h3>Project Description:</h3></label>
-                                <input type="text" class="form-control form-control-lg" id="user">
+                                <input type="text" class="form-control form-control-lg" id="projectdescaddproject">
                             </div>
                             <div class="form-group">
                                 <label for="user"><h3>Tech Stack:</h3></label>
-                                <input type="text" class="form-control form-control-lg" id="user">
+                                <input type="text" class="form-control form-control-lg" id="techstackaddproject">
                             </div>
                             <div class="form-group">
-                                <label for="user"><h3>Recomendation:</h3></label>
-                                <input type="text" class="form-control form-control-lg" id="user">
+                                <label for="user"><h3>Assign Users:</h3></label>
+                                <input type="text" class="form-control form-control-lg" id="recommendationsaddproject">
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary btn-lg">Add Skill</button>
+                            <button type="submit" class="btn btn-primary btn-lg" onclick="addproject()">Add Project</button>
                         </div>
 
                     </div>
@@ -131,7 +134,7 @@
             <div id="home-section">
                 <div class="dark-overlay">
                     <div class="container">
-                        <table class="table table-dark table-hover">
+                        <table class="table table-dark table-hover" id="mytable">
                             <thead>
                                 <tr>
                                     <th>S. No</th>
@@ -147,20 +150,18 @@
                                     <td>Made a project on node</td>
                                     <td>HTML,CSS,JAVASCRIPT</td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </body>
-    <script
-            src="http://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/adminhomepage.js"></script>
 </html>

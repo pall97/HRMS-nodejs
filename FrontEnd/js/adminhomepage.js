@@ -1,0 +1,118 @@
+/*  layout changing functions
+function defaultload(){
+	document.getElementById("default").style.display="block";
+	document.getElementById("user").style.display="none";
+	document.getElementById("skill").style.display="none";
+	document.getElementById("project").style.display="none";
+	showprojects();
+}
+function user(){
+	document.getElementById("default").style.display="none";
+	document.getElementById("user").style.display="block";
+	document.getElementById("skill").style.display="none";
+	document.getElementById("project").style.display="none";	
+}
+function skill(){
+	document.getElementById("default").style.display="none";
+	document.getElementById("user").style.display="none";
+	document.getElementById("skill").style.display="block";
+	document.getElementById("project").style.display="none";	
+}
+function project(){
+	document.getElementById("default").style.display="none";
+	document.getElementById("user").style.display="none";
+	document.getElementById("skill").style.display="none";
+	document.getElementById("project").style.display="block";	
+}
+*/
+
+
+function adduser(){
+	var username = document.getElementById("usernameadduser").value;
+    var password = document.getElementById("passwordadduser").value;
+	var usertype = document.getElementById("usertypeadduser").value;
+	var datafornewuser={
+		"Username": username,
+		"Password": password,
+		"Usertype": usertype
+		}
+	$.ajax({
+		url: 'http://localhost:5000/',
+        type: 'POST',
+        dataType: 'json',
+		data: datafornewuser,
+        success: function(res)
+							{
+								
+							}
+        });
+}
+function addskill(){
+	var skillname = document.getElementById("skillnameaddskill").value;
+	var skilldesc = document.getElementById("skilldescaddskill").value;
+	var datafornewskill={
+		"Skillname": skillname,
+		"Skilldescription": skilldesc
+	}
+	$.ajax({
+		url: 'http://localhost:5000',
+        type: 'GET',
+        dataType: 'json',
+		data: datafornewskill,
+        success: function(res)
+            {
+            if(pass == res.password){
+                window.location.href = "homepage.html";
+			     }  
+			else {
+				window.location.href = "index.html";	
+			 }
+            }
+        });
+	}
+	
+function addproject(){
+		var projectname = document.getElementById("projectnameaddproject").value;
+		var projectdesc = document.getElementById("projectdescaddproject").value;
+		var techstack = document.getElementById("techstackaddproject").value;
+		var recommendations = document.getElementById("recommendationsaddproject").value;
+	var datafornewproject={
+		"Projectname" projectname,
+		"Projectdescription": projectdesc,
+		"Techstack": techstack,
+		"Usersassigned": recommendations,
+	}
+	$.ajax({
+		url: 'http://localhost:5000/',
+        type: 'POST',
+        dataType: 'json',
+		data: datafornewproject,
+        success: function(res)
+							{
+
+							}				
+        });
+	}
+
+function showprojects(){							
+				$.ajax	({
+				url: "http://localhost:50052/api/EmployeeDetail",
+				type: 'GET',
+				dataType: 'json', 
+				success: function(data)
+									{
+									var table=document.getElementById("mytable");
+										for (var i=0; i<data.length; i++){
+											var row=table.insertRow(table.length);
+											row.insertCell(0).innerHTML=data[i].Id;
+											row.insertCell(1).innerHTML=data[i].ProjectName;
+											row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'ThrowId(\""+data[i].Id+"\")'>"
+											row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=\'ThrowId(\""+data[i].Id+"\")'>"
+
+											}
+									} 
+						});
+}
+//function ThrowId(Id){
+	//	window.location = "show user.html?Id="+Id;
+//}
