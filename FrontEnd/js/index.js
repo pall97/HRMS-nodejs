@@ -12,9 +12,14 @@ function loginform()
     var email = document.getElementById("Emaillogin").value;
 	var pass = document.getElementById("Passwordlogin").value;
 	$.ajax({
-		url: 'http://localhost:50052/api/AuthenticateUser/'+ Id,
+		url: 'http://localhost:5000/login',
         type: 'GET',
         dataType: 'json',
-        success: function(res){};
+        success: function(res){
+			
+			console.log(res.a);
+			
+			console.log(res.b);
+				}
         });
 	}

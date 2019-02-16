@@ -1,7 +1,7 @@
-//This Model Is for the user Table
+//This Model is for the user Table
 
 const mongoose = require('mongoose');
-const UserSchema = mongoose.Schema({
+const Userschema = mongoose.Schema({
 
     Username : {
         type : String,
@@ -22,5 +22,6 @@ const UserSchema = mongoose.Schema({
         type : String
     },
 });
-
-mongoose.model('User',UserSchema);
+//creates the model for Users Schema
+mongoose.model('Users',Userschema);
+module.export=Userschema;
