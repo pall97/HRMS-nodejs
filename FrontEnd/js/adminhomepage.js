@@ -1,32 +1,3 @@
-/*  layout changing functions
-function defaultload(){
-	document.getElementById("default").style.display="block";
-	document.getElementById("user").style.display="none";
-	document.getElementById("skill").style.display="none";
-	document.getElementById("project").style.display="none";
-	showprojects();
-}
-function user(){
-	document.getElementById("default").style.display="none";
-	document.getElementById("user").style.display="block";
-	document.getElementById("skill").style.display="none";
-	document.getElementById("project").style.display="none";	
-}
-function skill(){
-	document.getElementById("default").style.display="none";
-	document.getElementById("user").style.display="none";
-	document.getElementById("skill").style.display="block";
-	document.getElementById("project").style.display="none";	
-}
-function project(){
-	document.getElementById("default").style.display="none";
-	document.getElementById("user").style.display="none";
-	document.getElementById("skill").style.display="none";
-	document.getElementById("project").style.display="block";	
-}
-*/
-
-
 function adduser(){
 	var username = document.getElementById("usernameadduser").value;
     var password = document.getElementById("passwordadduser").value;
@@ -37,7 +8,7 @@ function adduser(){
 		"Usertype": usertype
 		}
 	$.ajax({
-		url: 'http://localhost:5000/',
+		url: 'http://localhost:5000/adminhomepage/adduser',
         type: 'POST',
         dataType: 'json',
 		data: datafornewuser,
@@ -47,6 +18,7 @@ function adduser(){
 							}
         });
 }
+
 function addskill(){
 	var skillname = document.getElementById("skillnameaddskill").value;
 	var skilldesc = document.getElementById("skilldescaddskill").value;
@@ -55,7 +27,7 @@ function addskill(){
 		"Skilldescription": skilldesc
 	}
 	$.ajax({
-		url: 'http://localhost:5000',
+		url: 'http://localhost:5000/adminhomepage/addskill',
         type: 'GET',
         dataType: 'json',
 		data: datafornewskill,
@@ -83,7 +55,7 @@ function addproject(){
 		"Usersassigned": recommendations,
 	}
 	$.ajax({
-		url: 'http://localhost:5000/',
+		url: 'http://localhost:5000/adminhomepage/addproject'',
         type: 'POST',
         dataType: 'json',
 		data: datafornewproject,
@@ -96,7 +68,7 @@ function addproject(){
 
 function showprojects(){							
 				$.ajax	({
-				url: "http://localhost:50052/api/EmployeeDetail",
+				url: "http://localhost:5000/adminhomepage/getprojects'",
 				type: 'GET',
 				dataType: 'json', 
 				success: function(data)

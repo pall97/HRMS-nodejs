@@ -1,6 +1,6 @@
 //create the model for the idea schema
 const mongoose = require('mongoose');
-const ProjectSchema = mongoose.Schema({
+const Projectschema = mongoose.Schema({
 
     Projectname : {
         type : String,
@@ -22,5 +22,6 @@ const ProjectSchema = mongoose.Schema({
 	}
 	
 });
-
-mongoose.model('Project',ProjectSchema);
+//creates the model for  Project Schema
+mongoose.model('Projects',Projectschema);
+module.export=Projectschema;

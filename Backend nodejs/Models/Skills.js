@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const SkillSchema = mongoose.Schema({
+const Skillschema = mongoose.Schema({
 	
     Skillname: 
     {
@@ -13,5 +13,6 @@ const SkillSchema = mongoose.Schema({
 	
 });
 
-//create the model for the idea schema
-mongoose.model('Skill',SkillSchema);
+//create the model for Skills Schema
+mongoose.model('Skills',Skillschema);
+module.export=Skillschema;
