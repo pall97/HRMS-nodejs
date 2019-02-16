@@ -1,6 +1,6 @@
 function adduser(){
-	var username = document.getElementById("usernameadduser").value;
-    var password = document.getElementById("passwordadduser").value;
+	var username = document.getElementById("useradduser").value;
+        var password = document.getElementById("passwordadduser").value;
 	var usertype = document.getElementById("usertypeadduser").value;
 	var datafornewuser={
 		"Username": username,
@@ -8,24 +8,27 @@ function adduser(){
 		"Usertype": usertype
 		}
 	$.ajax({
+
 		url: 'http://localhost:5000/adminhomepage/adduser',
+
         type: 'POST',
         dataType: 'json',
-		data: datafornewuser,
-        success: function(res)
-							{
-								
-							}
+	data: datafornewuser,
+        success: function(res){
+                      alert("done man");
+         }
+							
         });
 }
 
 function addskill(){
 	var skillname = document.getElementById("skillnameaddskill").value;
-	var skilldesc = document.getElementById("skilldescaddskill").value;
+	//var skilldesc = document.getElementById("skilldescaddskill").value;
 	var datafornewskill={
-		"Skillname": skillname,
-		"Skilldescription": skilldesc
+		"Skillname": skillname
+		//"Skilldescription": skilldesc
 	}
+
 	$.ajax({
 		url: 'http://localhost:5000/adminhomepage/addskill',
         type: 'GET',
@@ -41,7 +44,21 @@ function addskill(){
 			 }
             }
         });
-	}
+	}*/
+
+//made by deepak start
+$.ajax({
+	url: 'http://localhost:5000/addskills',
+        type: 'POST',
+        dataType: 'json',
+	data: datafornewskill,
+        success: function(res)
+            {
+            alert("ho gya");
+            }
+        });
+	}//end
+	
 	
 function addproject(){
 		var projectname = document.getElementById("projectnameaddproject").value;
@@ -49,8 +66,8 @@ function addproject(){
 		var techstack = document.getElementById("techstackaddproject").value;
 		var recommendations = document.getElementById("recommendationsaddproject").value;
 	var datafornewproject={
-		"Projectname" projectname,
-		"Projectdescription": projectdesc,
+		"Projectname" : projectname,
+		"Projectdesc": projectdesc,
 		"Techstack": techstack,
 		"Usersassigned": recommendations,
 	}
