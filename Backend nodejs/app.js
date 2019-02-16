@@ -7,7 +7,6 @@ const app = express();
 const port = 5000;
 let projects = require('./Models/Projects');
 
-
 app.listen(port, function(){
     console.log(`Server is running on port : ${port}`);
 });
