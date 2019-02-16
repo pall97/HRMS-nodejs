@@ -16,6 +16,11 @@ body{
 .container1{
     margin: 0px auto;
 }
+#home-section2{
+    background-image: url(images/background-books-bookshelves-1193603.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 #home-section1{
     background-image: url(images/background-books-bookshelves-1193603.jpg);
     background-repeat: no-repeat;
@@ -29,6 +34,17 @@ body{
     background-size: cover;
     width: 100%;
     min-height: 800px;
+}
+#userimage{
+    max-height: 20rem;
+    max-width: 20rem;
+}
+#forinline{
+    display: inline-block;
+}
+.fontcolor{
+  color: white; 
+    font-weight: 300;
 }
 .dark-overlay{
     background: rgba(0,0,0,0.8);
@@ -61,7 +77,12 @@ h2{
 .main{
     transform: translateY(-20%);
 }
-
+h3{
+    font-family: 'Dosis', sans-serif;
+/*font-family: 'Nova Flat', cursive;*/
+/*font-family: 'Source Code Pro', monospace;*/
+/*font-family: 'Abril Fatface', cursive;*/
+}
 #adminPic{
     max-width: 40%;
     max-height: 30%;
@@ -105,8 +126,7 @@ a.navbar-brand-1{
     font-size: 40px;
 }
 
-#adminPic
-nav-item{
+#adminPicnav-item{
     margin-right: 200%;
 }
 #home-section
@@ -136,10 +156,15 @@ h4.modal-title{
 .ml-4, .mx-4 {
     margin-left: 5.5rem!important;
 }
+ul li{
+    display: inline-block;
+    margin: 2rem 2rem 0rem 0rem;
+    font-size: 1.5rem;
+    font-family: 'Shadows Into Light', cursive;
+}
+
 @media only screen and (max-width: 991px){
-    body{
-        overflow-y: hidden; 
-    }
+   
     #logo{
         left: 50%;
         transform: translateX(-15%);
