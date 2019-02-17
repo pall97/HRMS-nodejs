@@ -1,3 +1,23 @@
+$(document).ready(function() {
+        $('.js-example-basic-multiple').select2({
+        placeholder: 'Select an option'
+        });
+          $(".js-example-responsive").select2({
+          width: 'resolve' // need to override the changed default
+        });
+          $(".js-example-theme-multiple").select2({
+          theme: "classic"
+        });
+          $(".js-example-placeholder-single").select2({
+          placeholder: "Have More Skills? Please Add",
+          allowClear: true
+        });
+          $('#example').select2({
+          placeholder: 'Select a month'
+        });
+});
+
+
 var getURL = function getURL(parm){
             var Pageurl = window.location.search.substring(1),
             URLVariables = Pageurl.split('&'),
@@ -14,7 +34,7 @@ var getURL = function getURL(parm){
 var Id=getURL('Id');
 //console.log(Id);
 
-function FillDetails(){
+function Fillskills(){
 				$.ajax	({
 				url: 'http://localhost:50052/api/EmployeeDetail/'+Id,
 				type: 'GET',
@@ -49,56 +69,18 @@ function UpdateDetails(){
 	var fname=firstname.valueOf();
 	var lastname = document.getElementById("Last Name").value;
 	var lname=lastname.valueOf();
-	var fathername = document.getElementById("Father Name").value;
-	var fathersname=fathername.valueOf();
-	var email = document.getElementById("Email").value;
-	var mail=email.valueOf();
-	var phone = document.getElementById("Phone Number").value;
-	var mobile=phone.valueOf();
-	var graddegree = document.getElementById("Graduationdegree").value;
-	var degree=graddegree.valueOf();
-	var gradmarks = document.getElementById("Graduationpercentage").value;
-	var twelfthboard = document.getElementById("Twelfthboard").value;
-	var board12=twelfthboard.valueOf();
-	var twelfthmarks = document.getElementById("Twelfthpercentage").value;
-	var tenthboard = document.getElementById("Tenthboard").value;
-	var board10=tenthboard.valueOf();
-	var tenthmarks = document.getElementById("Tenthpercentage").value;
-	var country = document.getElementById("Country").value;
-	var region=country.valueOf();
-	var dob = document.getElementById("Dob").value;
-	var gender = document.getElementById("Gender").value;
-	var sex=gender.valueOf();
-	var designation = document.getElementById("Designation").value;
-	var profile=designation.valueOf();
-	var address = document.getElementById("Address").value;
-	
-			var datafor_EmployeeDetail={
+			var datafor_updateskill={
 								"EducationDetail": {
 								"Id": empid,
 								"TenthBoard": board10,
 								"Tenthmarks": tenthmarks,
 								"Twelfthboard": board12,
-								"Twelfthmarks": twelfthmarks,
-								"GraduationDegree": degree,
-								"GraduationMarks": gradmarks,
 									
 								},
-								"Id": empid,
-								"firstname":fname,
-								"lastname":lname,
-								"fathername": fathersname,
-								"Email":mail,
-								"Phone": mobile,
-								"country":region,
-								"dob":dob, 
-								"gender": sex,
-								"designation": profile,
-								"address": address,
-								};
+
 						$.ajax({
 							url: 'http://localhost:50052/api/EmployeeDetail/'+Id,
-							data: datafor_EmployeeDetail,
+							data: datafor_updateskill,
 							type: 'PUT',
 							dataType: 'json', 
 							success: function(response){ 
@@ -107,30 +89,8 @@ function UpdateDetails(){
 													}	
 								});
 };
-//console.log(Id);
 
-function DeleteUser(Id){
-	//console.log(Id);
-		//to delete Education details
-		alert("Are you sure, You want to delete the user data from database.");
-		$.ajax({
-		url: 'http://localhost:50052/api/EducationDetail/'+Id,
-        type: 'DELETE',
-        dataType: 'json',
-        success: function(deleted){
-								console.log("Education Details have been deleted");
-								}
-        });
-		//to delete Signup details
-		$.ajax({
-		url: 'http://localhost:50052/api/AuthenticateUser/'+Id,
-        type: 'DELETE',
-        dataType: 'json',
-        success: function(deleted){
-								console.log("Authentication Details have been deleted");
-								}
-        });
-		//to delete Employee details
+function Deleteskill(){
 		$.ajax({
 		url: 'http://localhost:50052/api/EmployeeDetail/'+Id,
         type: 'DELETE',
