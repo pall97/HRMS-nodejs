@@ -1,6 +1,6 @@
 function adduser(){
 	var username = document.getElementById("useradduser").value;
-        var password = document.getElementById("passwordadduser").value;
+    var password = document.getElementById("passwordadduser").value;
 	var usertype = document.getElementById("usertypeadduser").value;
 	var datafornewuser={
 		"Username": username,
@@ -8,9 +8,7 @@ function adduser(){
 		"Usertype": usertype
 		}
 	$.ajax({
-
 		url: 'http://localhost:5000/adminhomepage/adduser',
-
         type: 'POST',
         dataType: 'json',
 	data: datafornewuser,
@@ -51,7 +49,7 @@ $.ajax({
 	url: 'http://localhost:5000/addskills',
         type: 'POST',
         dataType: 'json',
-	data: datafornewskill,
+		data: datafornewskill,
         success: function(res)
             {
             alert("ho gya");
