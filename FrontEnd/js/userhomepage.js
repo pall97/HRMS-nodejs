@@ -26,18 +26,6 @@ function FillDetails(){
 									document.getElementById("Last Name").value=EmpDetail.lastname;
 									document.getElementById("Father Name").value=EmpDetail.fathername;
 									document.getElementById("Email").value=EmpDetail.Email;
-									document.getElementById("Phone Number").value=EmpDetail.Phone;
-									document.getElementById("Country").value=EmpDetail.country;
-									document.getElementById("Dob").value=EmpDetail.dob;
-									document.getElementById("Gender").value=EmpDetail.gender;
-									document.getElementById("Designation").value=EmpDetail.designation;
-									document.getElementById("Address").value=EmpDetail.address;
-									document.getElementById("Graduationdegree").value=EmpDetail.EducationDetail.GraduationDegree;
-									document.getElementById("Graduationpercentage").value=EmpDetail.EducationDetail.GraduationMarks;
-									document.getElementById("Twelfthboard").value=EmpDetail.EducationDetail.Twelfthboard;
-									document.getElementById("Twelfthpercentage").value=EmpDetail.EducationDetail.Twelfthmarks;
-									document.getElementById("Tenthboard").value=EmpDetail.EducationDetail.TenthBoard;
-									document.getElementById("Tenthpercentage").value=EmpDetail.EducationDetail.Tenthmarks;
 										}
 						});
 };

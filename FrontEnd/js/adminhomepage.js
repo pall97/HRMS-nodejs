@@ -26,7 +26,6 @@ function addskill(){
 		"Skillname": skillname
 		//"Skilldescription": skilldesc
 	}
-
 	$.ajax({
 		url: 'http://localhost:5000/adminhomepage/addskill',
         type: 'GET',
@@ -42,8 +41,8 @@ function addskill(){
 			 }
             }
         });
-	}*/
-
+	}
+/*
 //made by deepak start
 $.ajax({
 	url: 'http://localhost:5000/addskills',
@@ -56,8 +55,7 @@ $.ajax({
             }
         });
 	}//end
-	
-	
+	*/
 function addproject(){
 		var projectname = document.getElementById("projectnameaddproject").value;
 		var projectdesc = document.getElementById("projectdescaddproject").value;

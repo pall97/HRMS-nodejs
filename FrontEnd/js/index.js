@@ -9,17 +9,14 @@ function showpass() {
 	
 function loginform()
 	{
-    var email = document.getElementById("Emaillogin").value;
-	var pass = document.getElementById("Passwordlogin").value;
+    var email = document.getElementById("Username").value;
+	var password = document.getElementById("Password").value;
 	$.ajax({
 		url: 'http://localhost:5000/login',
         type: 'GET',
         dataType: 'json',
         success: function(res){
-			
-			console.log(res.a);
-			
-			console.log(res.b);
+								
 				}
         });
 	}
