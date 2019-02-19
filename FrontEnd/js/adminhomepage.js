@@ -81,23 +81,34 @@ function addproject(){
 
 function showprojects(){							
 				$.ajax	({
-				url: "http://localhost:5000/adminhomepage/getprojects'",
+				url: "http://localhost:5000/adminhomepage/getprojects",
 				type: 'GET',
 				dataType: 'json', 
 				success: function(data)
-									{
-									var table=document.getElementById("mytable");
-										for (var i=0; i<data.length; i++){
-											var row=table.insertRow(table.length);
-											row.insertCell(0).innerHTML=data[i].Id;
-											row.insertCell(1).innerHTML=data[i].ProjectName;
-											row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'ThrowId(\""+data[i].Id+"\")'>"
-											row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=\'ThrowId(\""+data[i].Id+"\")'>"
-
-											}
-									} 
-						});
+				{
+                    console.log(data);
+                
+				 var table=document.getElementById("mytable");
+				 for (var i=0; i<data.project.length; i++){
+				 var row=table.insertRow(table.length);
+                     //console.log(data[i])
+                 row.insertCell(0).innerHTML=i+1;
+				 row.insertCell(1).innerHTML=data.project[i].Projectname;
+				 row.insertCell(2).innerHTML=data.project[i].Projectdesc;
+                 row.insertCell(3).innerHTML=data.project[i].Techstack; 
+                     
+                     
+                     
+				 /*row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'ThrowId(\""+data[i].Id+"\")'>"
+				 row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=\'ThrowId(\""+data[i].Id+"\")'>"
+*/
+				     }
+			            } 
+		        	});
 }
+
+
+
 //function ThrowId(Id){
 	//	window.location = "show user.html?Id="+Id;
 //}

@@ -6,7 +6,7 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const port = 5000;
-
+//deepak start
 require('./model/project');
 const projectmodel=mongoose.model('project');
 
@@ -15,7 +15,7 @@ const usermodel=mongoose.model('users');
 
 require('./model/skills');
 const skillmodel=mongoose.model('skills');
-
+//deepak end
 app.listen(port, function(){
     console.log(`Server is running on port : ${port}`);
 });
@@ -63,10 +63,10 @@ app.get('/login', (req, res)=>{
 //route for adminhomepage GETAPI
 //Showing project list to the admin usertype
 app.get('/adminhomepage/getprojects', (req, res)=>{
-    res.send('GET ADMIN DETAILS + projects');
-	
-	
-	
+    //start deepak
+    projectmodel.find({})
+.then(project => { res.send({project:project})})
+   //end deepak	
 });
 //route for userhomepage GETAPI
 //Showing userdet ails(profile picture, name, skills) to the user usertype
@@ -104,9 +104,9 @@ app.post('/adminhomepage/adduser', (req, res)=>{
     // start deepak
     console.log(req.body);
    const user={
-   	Username:JSON.stringify(req.body.Username),
-   	Password:JSON.stringify(req.body.Password),
-   	Usertype:JSON.stringify(req.body.Usertype)
+   	Username:(req.body.Username),
+   	Password:(req.body.Password),
+   	Usertype:(req.body.Usertype)
    }
    new usermodel(user)
    .save()
@@ -119,29 +119,33 @@ app.post('/adminhomepage/adduser', (req, res)=>{
 //Admin can create/add skills to the skill collection using this route
 app.post('/adminhomepage/addskills', (req, res)=>{
     console.log(req.body);
+    // start deepak
    const skill={
-    Skillsname: JSON.stringify(req.body)
+    Skillsname:(req.body)
    }
    new skillmodel(skill)
    .save()
    .then(()=> console.log('done.........'))
    .catch(err =>console.log(err));
+   //end deepak
 });
    
 //route for Adminhomepage Add Project
 //Admin can create/add Projects to the Project collection using this route
 app.post('/adminhomepage/addprojects', (req, res)=>{
     console.log(req.body);
+        // start deepak
 	const project={
-   	Projectname:JSON.stringify(req.body.Projectname),
-   	Projectdesc:JSON.stringify(req.body.Projectdesc),
-   	Techstack:JSON.stringify(req.body.Techstack),
-   	Userassigned:JSON.stringify(req.body.Usersassigned)
+   	Projectname:(req.body.Projectname),
+   	Projectdesc:(req.body.Projectdesc),
+   	Techstack:(req.body.Techstack),
+   	Userassigned:(req.body.Usersassigned)
    }
    new projectmodel(project)
    .save()
    .then(()=> console.log('done.........'))
    .catch(err =>console.log(err));
+   //end deepak
    });
 
 //route for userhomepage updateskills
