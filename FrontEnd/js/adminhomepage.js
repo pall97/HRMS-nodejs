@@ -28,16 +28,16 @@ function addskill(){
 	}
 	$.ajax({
 		url: 'http://localhost:5000/adminhomepage/addskill',
-        type: 'GET',
+        type: 'POST',
         dataType: 'json',
 		data: datafornewskill,
         success: function(res)
             {
             if(pass == res.password){
-                window.location.href = "homepage.html";
+                window.location.href = "adminHomePage.html";
 			     }  
 			else {
-				window.location.href = "index.html";	
+				window.location.href = "adminHomePage.html";	
 			 }
             }
         });
@@ -68,7 +68,7 @@ function addproject(){
 		"Usersassigned": recommendations,
 	}
 	$.ajax({
-		url: 'http://localhost:5000/adminhomepage/addproject'',
+		url: 'http://localhost:5000/adminhomepage/addproject',
         type: 'POST',
         dataType: 'json',
 		data: datafornewproject,
