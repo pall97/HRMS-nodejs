@@ -5,6 +5,11 @@ body{
 /*    overflow-y: hidden;    */
 }
 
+/*
+#try{ 
+    margin-top: 40%;
+}
+*/
 .main{
     padding-top: 3rem;
     width: 100%;
@@ -146,6 +151,7 @@ table{
 .modal-content{
     color: white;
     background-color: rgba(0,0,0,0.8);
+    min-height: 200px;
 }
 h4.modal-title{
     font-size: 300%;
@@ -156,7 +162,7 @@ h4.modal-title{
 .ml-4, .mx-4 {
     margin-left: 5.5rem!important;
 }
-ul li{
+#skills{
     display: inline-block;
     margin: 2rem 2rem 0rem 0rem;
     font-size: 1.5rem;
@@ -253,4 +259,20 @@ ul li{
 
 
 
+table 
+{
+  position: absolute;
+  left: 15%;
+  right:25%;
+  top:30%;
+  text-align: center;
+    border: none;
+  
+}
+
+th,td 
+{
+   color: white;
+    padding:16px;
+}
 
