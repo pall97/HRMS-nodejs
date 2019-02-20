@@ -96,17 +96,48 @@ function showprojects(){
 				 row.insertCell(1).innerHTML=data.project[i].Projectname;
 				 row.insertCell(2).innerHTML=data.project[i].Projectdesc;
                  row.insertCell(3).innerHTML=data.project[i].Techstack; 
-                     
-                     
-                     
-				 /*row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'ThrowId(\""+data[i].Id+"\")'>"
-				 row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=\'ThrowId(\""+data[i].Id+"\")'>"
-*/
+				 row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'updateproject(\""+data.project[i]._id+"\")'>"
+				 row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=deleteproject(\""+data.project[i]._id+"\")'>"
 				     }
 			            } 
 		        	});
 }
+function deleteproject(Id){
+	alert("are you sure you want to delete this project, Changes may be not be reversible");
+	$.ajax({
+		url: 'http://localhost:5000/adminhomepage/deleteproject/'+Id,
+        type: 'DELETE',
+        dataType: 'json',
+        success: function(res){
+			alert("Project has been deleted succesfully");
+			window.location="adminhomepage.html";			
+            }
+        });
+	}
 
+function updateproject(){
+		var projectname = document.getElementById("projectnameaddproject").value;
+		var projectdesc = document.getElementById("projectdescaddproject").value;
+		var techstack = document.getElementById("techstackaddproject").value;
+		var recommendations = document.getElementById("recommendationsaddproject").value;
+	var dataforupdateproject={
+		"Projectname" : projectname,
+		"Projectdesc": projectdesc,
+		"Techstack": techstack,
+		"Usersassigned": recommendations,
+	}
+	$.ajax({
+		url: 'http://localhost:5000/adminhomepage/updateproject/'+Id,
+        type: 'PUT',
+        dataType: 'json',
+		data: dataforupdateproject,
+        success: function(res)
+							{
+							alert("Project has been updated succesfully");
+							window.location="adminhomepage.html";
+							}				
+        });
+	}
 
 
 //function ThrowId(Id){
