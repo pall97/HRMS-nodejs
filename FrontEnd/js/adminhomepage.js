@@ -1,3 +1,27 @@
+function showprojects(){							
+			$.ajax	({
+				url: "http://localhost:5000/adminhomepage/getprojects",
+				type: 'GET',
+				dataType: 'json', 
+				success: function(data)
+				{
+                    console.log(data);
+                
+				 var table=document.getElementById("mytable");
+				 for (var i=0; i<data.project.length; i++){
+				 var row=table.insertRow(table.length);
+                     //console.log(data[i])
+                 row.insertCell(0).innerHTML=i+1;
+				 row.insertCell(1).innerHTML=data.project[i].Projectname;
+				 row.insertCell(2).innerHTML=data.project[i].Projectdesc;
+                 row.insertCell(3).innerHTML=data.project[i].Techstack; 
+				 row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'updateproject(\""+data.project[i]._id+"\")'>"
+				 row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=deleteproject(\""+data.project[i]._id+"\")'>"
+				     }
+		      } 
+		});
+}
+
 function adduser(){
 	var username = document.getElementById("useradduser").value;
     var password = document.getElementById("passwordadduser").value;
@@ -13,7 +37,8 @@ function adduser(){
         dataType: 'json',
 	data: datafornewuser,
         success: function(res){
-                      alert("done man");
+                      alert("User has been added");
+					  window.location="adminhomepage.html";
          }
 							
         });
@@ -32,16 +57,12 @@ function addskill(){
         dataType: 'json',
 		data: datafornewskill,
         success: function(res)
-            {
-            if(pass == res.password){
-                window.location.href = "adminHomePage.html";
-			     }  
-			else {
-				window.location.href = "adminHomePage.html";	
-			 }
-            }
+								{
+						alert("Skill has been added");
+						window.location="adminhomepage.html";
+								}
         });
-	}
+}
 /*
 //made by deepak start
 $.ajax({
@@ -74,46 +95,11 @@ function addproject(){
 		data: datafornewproject,
         success: function(res)
 							{
-
+                      alert("Project has been added");
+					  window.location="adminhomepage.html";
 							}				
         });
-	}
-
-function showprojects(){							
-				$.ajax	({
-				url: "http://localhost:5000/adminhomepage/getprojects",
-				type: 'GET',
-				dataType: 'json', 
-				success: function(data)
-				{
-                    console.log(data);
-                
-				 var table=document.getElementById("mytable");
-				 for (var i=0; i<data.project.length; i++){
-				 var row=table.insertRow(table.length);
-                     //console.log(data[i])
-                 row.insertCell(0).innerHTML=i+1;
-				 row.insertCell(1).innerHTML=data.project[i].Projectname;
-				 row.insertCell(2).innerHTML=data.project[i].Projectdesc;
-                 row.insertCell(3).innerHTML=data.project[i].Techstack; 
-				 row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'updateproject(\""+data.project[i]._id+"\")'>"
-				 row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=deleteproject(\""+data.project[i]._id+"\")'>"
-				     }
-			            } 
-		        	});
 }
-function deleteproject(Id){
-	alert("are you sure you want to delete this project, Changes may be not be reversible");
-	$.ajax({
-		url: 'http://localhost:5000/adminhomepage/deleteproject/'+Id,
-        type: 'DELETE',
-        dataType: 'json',
-        success: function(res){
-			alert("Project has been deleted succesfully");
-			window.location="adminhomepage.html";			
-            }
-        });
-	}
 
 function updateproject(){
 		var projectname = document.getElementById("projectnameaddproject").value;
@@ -137,9 +123,17 @@ function updateproject(){
 							window.location="adminhomepage.html";
 							}				
         });
-	}
+}
 
-
-//function ThrowId(Id){
-	//	window.location = "show user.html?Id="+Id;
-//}
+function deleteproject(Id){
+	alert("are you sure you want to delete this project, Changes may be not be reversible");
+	$.ajax({
+		url: 'http://localhost:5000/adminhomepage/deleteproject/'+Id,
+        type: 'DELETE',
+        dataType: 'json',
+        success: function(res){
+			alert("Project has been deleted succesfully");
+			window.location="adminhomepage.html";			
+            }
+        });
+}
