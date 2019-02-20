@@ -147,11 +147,52 @@ app.post('/adminhomepage/addprojects', (req, res)=>{
    .catch(err =>console.log(err));
    //end deepak
    });
+   
+//route for Adminhomepage upadte Project
+//Admin can update Projects to the Project collection using this route
+app.put('/adminhomepage/updateprojects', (req, res)=>{
+    console.log(req.body);
+        // start deepak
+	const project={
+   	Projectname:(req.body.Projectname),
+   	Projectdesc:(req.body.Projectdesc),
+   	Techstack:(req.body.Techstack),
+   	Userassigned:(req.body.Usersassigned)
+   }
+   new projectmodel(project)
+   .save()
+   .then(()=> console.log('done.........'))
+   .catch(err =>console.log(err));
+   //end deepak
+});
 
-//route for userhomepage updateskills
+//route for Adminhomepage delete Project
+//Admin can delete Projects to the Project collection using this route
+app.delete('/adminhomepage/deleteprojects/:id', (req,res)=>{
+
+projectmodel.deleteOne({_id:req.params.id})
+.then(()=> res.send({}))
+.catch(err =>console.log(err));
+});
+   
+//route for userhomepage adding new skills
+//user can update his skill through this route
+app.post('/userhomepage/getuserdetails', (req, res)=>{
+ console.log('get userdetails');
+
+});   
+   
+   
+//route for userhomepage adding new skills
 //user can update his skill through this route
 app.post('/userhomepage/addskills', (req, res)=>{
  console.log('Add Userskills');
 
- 
+});
+
+//route for userhomepage deleteskills
+//user can delete his skill through this route
+app.delete('/userhomepage/deleteskills', (req, res)=>{
+ console.log('delete Userskills');
+
 });
