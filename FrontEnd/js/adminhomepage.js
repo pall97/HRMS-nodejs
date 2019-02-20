@@ -15,8 +15,8 @@ function showprojects(){
 				 row.insertCell(1).innerHTML=data.project[i].Projectname;
 				 row.insertCell(2).innerHTML=data.project[i].Projectdesc;
                  row.insertCell(3).innerHTML=data.project[i].Techstack; 
-				 row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'updateproject(\""+data.project[i]._id+"\")'>"
-				 row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=deleteproject(\""+data.project[i]._id+"\")'>"
+				 row.insertCell(2).innerHTML="<input type='button' value='Update Project' class='editbutton' onclick=\'updateproject(\""+data.project[i]._id+"\")'>"
+				 row.insertCell(3).innerHTML="<input type='button' value='Delete project' class='deletebutton' onclick=deleteproject(\""+data.project[i]._id+"\")'>"
 				     }
 		      } 
 		});
