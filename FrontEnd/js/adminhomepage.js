@@ -15,8 +15,8 @@ function showprojects(){
 				 row.insertCell(1).innerHTML=data.project[i].Projectname;
 				 row.insertCell(2).innerHTML=data.project[i].Projectdesc;
                  row.insertCell(3).innerHTML=data.project[i].Techstack; 
-				 row.insertCell(4).innerHTML="<input type='button' value='Update Project' class='editbutton' onclick=\'updateproject(\""+data.project[i]._id+"\")'>"
-				 row.insertCell(5).innerHTML="<input type='button' value='Delete project' class='deletebutton' onclick=deleteproject(\""+data.project[i]._id+"\")'>"
+				 row.insertCell(4).innerHTML="<input type='button' value='Update Project' class='btn btn-lg btn-warning editbutton' onclick=\'updateproject(\""+data.project[i]._id+"\")'>";
+				 row.insertCell(5).innerHTML="<input type='button' value='Delete project' class=' btn btn-lg btn-danger deletebutton' onclick=\'deleteproject(\""+data.project[i]._id+"\")'>";
 				     }
 		      } 
 		});
@@ -127,11 +127,13 @@ function updateproject(){
 
 function deleteproject(Id){
 	alert("are you sure you want to delete this project, Changes may be not be reversible");
-	$.ajax({
+    console.log(Id);
+        $.ajax({
 		url: 'http://localhost:5000/adminhomepage/deleteproject/'+Id,
         type: 'DELETE',
         dataType: 'json',
         success: function(res){
+            console.log(res);
 			alert("Project has been deleted succesfully");
 			window.location="adminhomepage.html";			
             }

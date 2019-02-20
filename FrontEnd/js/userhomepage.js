@@ -11,7 +11,7 @@ var getURL = function getURL(parm){
             }
         }
     }
-var Id=getURL('Id');
+ var Id=getURL('Id');
 //console.log(Id);
 
 function FillDetails(){
