@@ -168,22 +168,12 @@ app.put('/adminhomepage/updateprojects', (req, res)=>{
 
 //route for Adminhomepage delete Project
 //Admin can delete Projects to the Project collection using this route
-app.delete('/adminhomepage/deleteprojects', (req, res)=>{
-    console.log(req.body);
-        // start deepak
-	const project={
-   	Projectname:(req.body.Projectname),
-   	Projectdesc:(req.body.Projectdesc),
-   	Techstack:(req.body.Techstack),
-   	Userassigned:(req.body.Usersassigned)
-   }
-   new projectmodel(project)
-   .save()
-   .then(()=> console.log('done.........'))
-   .catch(err =>console.log(err));
-   //end deepak
-   });
+app.delete('/adminhomepage/deleteprojects/:id', (req,res)=>{
 
+projectmodel.deleteOne({_id:req.params.id})
+.then(()=> res.send({}))
+.catch(err =>console.log(err));
+});
    
 //route for userhomepage adding new skills
 //user can update his skill through this route
