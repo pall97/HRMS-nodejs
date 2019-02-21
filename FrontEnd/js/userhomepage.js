@@ -1,33 +1,32 @@
 function showdetails(){							
 			$.ajax	({
-				url: "http://localhost:5000/userhomepage/getuserdetails",
+				url: "http://localhost:5000/userhomepage/"+Id,
 				type: 'GET',
 				dataType: 'json', 
 				success: function(data)
 				{
-                    console.log(data);     
+                    //console.log(data);
                     
-	var datafornewskill = {
-         var name = document.getElementById("displayUsername").value;
-             var skills = document.getElementById("mytable").value;
-				 var table=document.getElementById("mytable");
-				 for (var i=0; i<data.project.length; i++){
+                document.getElementById("displayUsername").value.innerHTML=data.user.Username;  // display name
+                var ctr=0;
+				 var table=document.getElementById("mytable"); //display skills
+				 for (var i=0; i<data.users.Skills.length; i++){
 				 var row=table.insertRow(table.length);
-//                     //console.log(data[i])
-                 row.insertCell(0).innerHTML=i+1;
-				 row.insertCell(1).innerHTML=data.project[i].Name;
-				 row.insertCell(2).innerHTML=data.project[i].Skills;
-//                 row.insertCell(3).innerHTML=data.project[i].Techstack; 
-//				 row.insertCell(2).innerHTML="<input type='button' value='Click To View' class='editbutton' onclick=\'updateskill(\""+data.project[i]._id+"\")'>"
-//				 row.insertCell(3).innerHTML="<input type='button' value='Click To View' class='deletebutton' onclick=deleteskill(\""+data.project[i]._id+"\")'>"
+				 row.insertCell(0).innerHTML=data.users.Skills;
+				                   
+                         
+			
 				     }
 		      } 
 		});
 }
 
 
+
 function addskill(){ 
 	var skillname = document.getElementById("showselect").value;  
+    console.log(skillname);
+    
 	var datafornewskill = {
 		"Skillname": skillname
 	}
